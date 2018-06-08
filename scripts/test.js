@@ -1,1 +1,3 @@
-sendReply('This is a test reply.');
+global.main = function() {
+  sendReply('This is a test reply.');
+}
