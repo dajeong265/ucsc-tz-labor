@@ -22,5 +22,6 @@ function main() {
     
     if (recruit_service_keywords.some(msg_contains)) {
         invoke_with_msg(contact.vars.recruit_service);
+        return_value = true; // Don't fall through to next service
     }
 }
