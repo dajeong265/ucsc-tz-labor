@@ -10,3 +10,9 @@ function make_hash(id) {
 function read_hash(hash) {
     return hashids.decode(hash);
 };
+
+
+module.exports = {
+    make_hash: make_hash,
+    read_hash: read_hash,
+};
