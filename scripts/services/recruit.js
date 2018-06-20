@@ -1,6 +1,6 @@
 var recruit_service_keywords = ['hire', 'recruit', 'employ'];
 
-function main() {
+global.main = function() {
     // Process all incoming messages and determine the correct service
     // to route the user to.
 
