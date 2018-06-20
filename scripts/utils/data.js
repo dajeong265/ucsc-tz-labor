@@ -12,9 +12,25 @@ function store_with_code(table_name, contact, vars) {
     });
 
     return vars.code;
-}
+};
+
+
+function get_row_with_code(table_name, code) {
+    var table = project.getOrCreateDataTable(table_name),
+        cursor = table.queryRows({
+            vars: {'code': code}
+        });
+
+    cursor.limit(1);
+
+    while (cursor.hasNext()) {
+        return cursor.next();
+    }
+    return false;
+};
 
 
 module.exports = {
     store_with_code: store_with_code,
+    get_row_with_code: get_row_with_code,
 }
