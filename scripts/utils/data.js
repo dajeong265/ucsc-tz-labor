@@ -12,8 +12,12 @@ function store(table_name, contact, vars) {
 
 
 function store_with_code(table_name, contact, vars) {
+    var table = project.getOrCreateDataTable(table_name);
     vars.code = hashes.make_hash(table.num_rows+1),
-    store(table_name, contact, vars);
+    table.createRow({
+        contact_id: contact.id,
+        vars: vars,
+    });
     return vars.code;
 };
 
