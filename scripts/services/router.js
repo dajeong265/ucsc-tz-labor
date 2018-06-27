@@ -8,6 +8,7 @@ global.main = function() {
         ['recruit_service', ['hire', 'recruit', 'employ']],
         ['offer_service', ['job']],
         ['accept_service', ['offer']],
+        ['close_service', ['close']],
     ];
 
     var msg_contains = function(word) {
