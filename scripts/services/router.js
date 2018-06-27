@@ -33,7 +33,7 @@ global.main = function() {
 
         if (service_id && keywords.some(msg_contains)) {
             invoke_with_msg(service_id);
-            return_value = true; // Don't fall through to next service
+            global.return_value = true;
             break;
         }
     }
