@@ -1,5 +1,5 @@
 function parse_code(content) {
-    matches = content.match(/\#([\w\d]+)$/i);
+    matches = content.match(/\ (\d{6})$/);
 
     if (matches) {
         return matches[1];
