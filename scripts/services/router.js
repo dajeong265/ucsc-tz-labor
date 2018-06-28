@@ -7,7 +7,7 @@ global.main = function() {
     var routes = [
         ['recruit_service', ['hire', 'recruit', 'employ','kazi','kibarua']],
         ['offer_service', ['job']],
-        ['accept_service', ['offer']],
+        ['view_service', ['offer']],
         ['close_service', ['close']],
     ];
 
