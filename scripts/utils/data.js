@@ -1,6 +1,15 @@
-function get_row_with_code(table_name, code) {
-    var table = project.getOrCreateDataTable(table_name),
-        cursor = table.queryRows({
+function _table(table) {
+    if(typeof table === 'string') {
+        return project.getOrCreateDataTable(table);
+    }
+    else {
+        return table;
+    }
+}
+
+function get_row_with_code(table, code) {
+    var t = _table(table),
+        cursor = t.queryRows({
             vars: {'code': code}
         });
 
@@ -10,18 +19,19 @@ function get_row_with_code(table_name, code) {
         return cursor.next();
     }
     return false;
-};
+}
 
 
 function generate_code() {
     return (Math.floor(Math.random() * 900000) + 100000).toString();
-};
+}
 
 
 function make_code(table) {
-    var collision,
+    var t = _table(table),
+        collision,
         code = generate_code(),
-        cursor = table.queryRows({
+        cursor = t.queryRows({
             vars: {'code': code}
         });
 
@@ -29,31 +39,50 @@ function make_code(table) {
     collision = cursor.hasNext();
 
     if (collision) {
-        return make_code(table);
+        return make_code(t);
     }
     return code;
-};
+}
 
 
-function store(table_name, contact, vars) {
-    var table = project.getOrCreateDataTable(table_name);
-
-    return table.createRow({
+function store(table, contact, vars) {
+    var t = _table(table);
+    return t.createRow({
         contact_id: contact.id,
         vars: vars,
     });
-};
+}
 
 
-function store_with_code(table_name, contact, vars) {
-    var table = project.getOrCreateDataTable(table_name);
-    vars.code = make_code(table),
-    table.createRow({
+function store_with_code(table, contact, vars) {
+    var t = _table(table);
+    vars.code = make_code(t),
+    t.createRow({
         contact_id: contact.id,
         vars: vars,
     });
     return vars.code;
-};
+}
+
+
+function exists(table, vars) {
+    var t = _table(table);
+    cursor = t.queryRows({
+        vars: vars,
+    });
+    cursor.limit(1);
+    return cursor.count() !== 0;
+}
+
+
+function update(table, row_id, vars) {
+    var t = _table(table),
+        row = t.getRowById(row_id);
+    _.each(vars, function(e, i, l) {
+        row.vars[i] = e;
+    });
+    row.save();
+}
 
 
 module.exports = {
@@ -62,4 +91,6 @@ module.exports = {
     make_code: make_code,
     store: store,
     store_with_code: store_with_code,
+    exists: exists,
+    update: update,
 }
