@@ -9,6 +9,7 @@ global.main = function() {
         ['offer_service', ['job']],
         ['view_service', ['offer']],
         ['close_service', ['close']],
+        ['survey_service', ['survey']],
     ];
 
     var msg_contains = function(word) {
