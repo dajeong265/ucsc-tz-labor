@@ -38,7 +38,7 @@ function make_code(table) {
 function store(table_name, contact, vars) {
     var table = project.getOrCreateDataTable(table_name);
 
-    table.createRow({
+    return table.createRow({
         contact_id: contact.id,
         vars: vars,
     });
