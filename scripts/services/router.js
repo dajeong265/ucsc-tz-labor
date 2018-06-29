@@ -5,11 +5,11 @@ global.main = function() {
     // Each route is an array consisting of the name of a contact var at which
     // to find the service to route to and an array of keywords to match against
     var routes = [
-        ['recruit_service', ['hire', 'recruit', 'employ','kazi','kibarua']],
-        ['offer_service', ['job']],
-        ['view_service', ['offer']],
-        ['close_service', ['close']],
-        ['survey_service', ['survey']],
+        ['recruit_service', ['hire', 'recruit', 'employ','kazi','kibarua','vibarua']],
+        ['offer_service', ['job','kazi']],
+        ['view_service', ['offer','huduma']],
+        ['close_service', ['close','sitisha']],
+        ['survey_service', ['survey','utafiti']],
     ];
 
     var msg_contains = function(word) {
