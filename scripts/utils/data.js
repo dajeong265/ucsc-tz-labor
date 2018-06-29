@@ -82,6 +82,7 @@ function update(table, row_id, vars) {
         row.vars[i] = e;
     });
     row.save();
+    return row;
 }
 
 
