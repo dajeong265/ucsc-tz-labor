@@ -1,7 +1,6 @@
 var data = require('../../utils/data');
 
-global.$offer = content;
-global.$offer_code = data.store_with_code(
+var offer = data.store_with_code(
     'offer',
     contact,
     {
@@ -9,3 +8,6 @@ global.$offer_code = data.store_with_code(
         'rate': content,
     }
 );
+
+global.$offer = content;
+global.$offer_code = offer.vars.code;

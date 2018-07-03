@@ -57,11 +57,10 @@ function store(table, contact, vars) {
 function store_with_code(table, contact, vars) {
     var t = _table(table);
     vars.code = make_code(t),
-    t.createRow({
+    return t.createRow({
         contact_id: contact.id,
         vars: vars,
     });
-    return vars.code;
 }
 
 
