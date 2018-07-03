@@ -1,8 +1,10 @@
 var data = require('../../utils/data'),
     utils = require('../../utils/content');
 
+var request_table = project.getOrCreateDataTable('survey_request');
+
 if(state.vars.recruit_id) {
-    data.update(
+    var request = data.update(
         'survey_request',
         state.vars.request_id,
         {
@@ -10,6 +12,25 @@ if(state.vars.recruit_id) {
             finished: true,
         }
     );
+
+    // Update the workers average rating
+    var worker = project.initContactById(request.vars.worker_id);
+        worker_ratings = request_table.queryRows({
+            vars: {'worker_id': worker.id},
+        }),
+        all_ratings = _.map(worker_ratings.all(), function(row) {
+            return row.vars.rating;
+        }),
+        valid_ratings = _.without(all_ratings, 0, undefined, '');
+        total_rating = _.reduce(valid_ratings, function(memo, num) {
+            return memo + parseInt(num);
+        }, 0);
+    if (total_rating) {
+        worker.vars.rating = Math.round(total_rating / valid_ratings.length);
+        worker.vars.rating_count = valid_ratings.length;
+        worker.save();
+    }
+
     global.$recruit_id = state.vars.recruit_id;
     global.$survey_id = state.vars.survey_id;
 }
@@ -24,16 +45,14 @@ else {
 }
 
 if(global.$recruit_id) {
-    var request_table = project.getOrCreateDataTable('survey_request'),
-        requests = request_table.queryRows({
+    var requests = request_table.queryRows({
             vars: {
                 'recruit_id': global.$recruit_id,
             },
+        }),
+        request = _.find(requests.all(), function (request){
+            return request.vars.finished !== true;
         });
-
-    var request = _.find(requests.all(), function (request){
-        return request.vars.finished !== true;
-    });
 
     if(request) {
         global.$name = request.vars.name;

@@ -73,4 +73,6 @@ if (offer) {
 
     global.$worker_name = worker.name;
     global.$worker_phone = worker.phone_number;
+    global.$worker_rating = worker.vars.rating;
+    global.$worker_rating_count = worker.vars.rating_count;
 }
