@@ -10,6 +10,7 @@ global.main = function() {
         ['view_service', ['offer','huduma']],
         ['close_service', ['close','sitisha']],
         ['survey_service', ['survey','utafiti']],
+        ['startstop_service', ['start', 'stop']],
     ];
 
     var msg_contains = function(word) {
