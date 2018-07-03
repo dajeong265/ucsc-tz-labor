@@ -39,6 +39,7 @@ if (offer) {
                 offer_id: offer.id,
                 view_id: view.id,
                 recruit_id: offer.vars.recruit_id,
+                worker_id: worker.id,
                 name: worker.name,
             }
         );
