@@ -50,7 +50,7 @@ else {
 if(global.$recruit_id) {
     var requests = request_table.queryRows({
             vars: {
-                'recruit_id': state.vars.recruit_id,
+                'recruit_id': global.$recruit_id,
             },
         }),
         request = _.find(requests.all(), function (request){
