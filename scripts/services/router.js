@@ -9,9 +9,9 @@ global.main = function() {
         ['offer_service', ['job','kazi']],
         ['view_service', ['offer','huduma']],
         ['close_service', ['close','sitisha']],
-        ['survey_service', ['survey','utafiti']],
+        ['survey_service', ['feedback','mrejesho']],
         ['startstop_service', ['start', 'stop']],
-        ['random_service', ['random']],
+        ['random_service', ['survey', 'utafiti']],
     ];
 
     var msg_contains = function(word) {
