@@ -32,14 +32,17 @@ if(state.vars.recruit_id) {
     }
 
     global.$recruit_id = state.vars.recruit_id;
-    global.$survey_id = state.vars.survey_id;
 }
 else {
     var code = utils.parse_code(content),
         survey = data.get_row_with_code('survey', code);
 
     if (survey && survey.vars.finished !== true) {
-        global.$recruit_id = survey.vars.recruit_id;
+        var recruit_table = project.getOrCreateDataTable('recruit'),
+            recruit = recruit_table.getRowById(survey.vars.recruit_id);
+
+        global.$payment = recruit.vars.payment;
+        global.$recruit_id = recruit.id;
         global.$survey_id = survey.id;
     }
 }
@@ -47,7 +50,7 @@ else {
 if(global.$recruit_id) {
     var requests = request_table.queryRows({
             vars: {
-                'recruit_id': global.$recruit_id,
+                'recruit_id': state.vars.recruit_id,
             },
         }),
         request = _.find(requests.all(), function (request){
