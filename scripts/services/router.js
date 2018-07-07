@@ -8,9 +8,9 @@ global.main = function() {
         ['recruit_service', ['hire', 'recruit', 'employ','kibarua','vibarua','wafanyakazi']],
         ['offer_service', ['job','kazi']],
         ['view_service', ['offer','huduma']],
-        ['close_service', ['close','sitisha']],
+        ['close_service', ['close','funga']],
         ['survey_service', ['feedback','mrejesho']],
-        ['startstop_service', ['start', 'stop']],
+        ['startstop_service', ['start', 'stop', 'anza', 'sitisha']],
         ['random_service', ['survey', 'utafiti']],
     ];
 
