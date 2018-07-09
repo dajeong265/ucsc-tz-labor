@@ -6,8 +6,11 @@ var code = utils.parse_code(content),
 
 if (row) {
     if (row.vars.closed === undefined) {
+        var recruiter = project.getContactById(row.contact_id);
+
         global.$recruit_id = row.id;
-        global.$recruiter = project.getContactById(row.contact_id).phone_number;
+        global.$recruiter = recruiter.phone_number;
+        global.$recruiter_name = recruiter.name;
         global.$payment = row.vars.payment;
     }
     else {
