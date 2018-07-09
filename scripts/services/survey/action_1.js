@@ -44,6 +44,7 @@ else {
         global.$payment = recruit.vars.payment;
         global.$recruit_id = recruit.id;
         global.$survey_id = survey.id;
+        global.$posted = moment.unix(survey.vars.posted).format('MMM Do');
     }
 }
 
