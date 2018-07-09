@@ -5,6 +5,6 @@ data.update(
     state.vars.survey_id,
     {
         'paid': state.vars.paid,
-        'others': state.vars.others,
+        'total': state.vars.total,
     }
 );
