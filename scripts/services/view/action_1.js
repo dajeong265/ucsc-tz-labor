@@ -62,7 +62,7 @@ if (offer) {
         var prompt_msg = project.scheduleMessage({
                 content: global.prompt_tpl(ctx),
                 to_number: from_number,
-                start_time: parseInt(survey.vars.posted)+604800,
+                start_time: parseInt(survey.vars.posted)+600, # in seconds (unix timestamp)
                 rrule: 'FREQ=DAILY;INTERVAL=2;COUNT=2;',
             });
 
