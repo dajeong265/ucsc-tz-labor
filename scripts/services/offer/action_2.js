@@ -22,5 +22,9 @@ var prompt_msg = project.scheduleMessage({
     rrule: 'FREQ=DAILY;INTERVAL=2;COUNT=2;',
 });
 
+// Save the prompt id for later cancellation
+offer.vars.prompt_msg_id = prompt_msg.id;
+offer.save();
+
 global.$offer = content;
 global.$offer_code = offer.vars.code;
