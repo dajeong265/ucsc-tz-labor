@@ -18,7 +18,7 @@ var ctx = {
 var prompt_msg = project.scheduleMessage({
     content: global.prompt_tpl(ctx),
     to_number: from_number,
-    start_time_offset: 600, // in seconds (unix timestamp)
+    start_time_offset: 300, // in seconds (unix timestamp)
     rrule: 'FREQ=DAILY;INTERVAL=2;COUNT=2;',
 });
 
