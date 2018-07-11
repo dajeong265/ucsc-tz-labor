@@ -13,7 +13,7 @@ global.main = function() {
         ['start_service', ['start', 'anza']],
         ['stop_service', ['stop', 'sitisha']],
         ['random_service', ['survey', 'utafiti']],
-        ['review_service', ['review']],
+        ['review_service', ['review', 'hakiki']],
     ];
 
     var msg_contains = function(word) {
