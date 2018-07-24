@@ -5,7 +5,7 @@ global.main = function() {
     // Each route is an array consisting of the name of a contact var at which
     // to find the service to route to and an array of keywords to match against
     var routes = [
-        ['recruit_service', ['hire', 'recruit', 'employ','kibarua','vibarua','wafanyakazi']],
+        ['recruit_service', ['hire', 'recruit', 'employ','kibarua','vibarua','wafanyakazi', 'wafanya', 'wafanya kazi', 'wafanya kaz']],
         ['offer_service', ['job','kazi']],
         ['view_service', ['offer','huduma']],
         ['close_service', ['close','funga']],
