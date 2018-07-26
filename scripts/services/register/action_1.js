@@ -26,25 +26,24 @@ if (!worker_group.vars.old_group) {
     global.$new_village = true;
 }
 
-if (state.vars.type == 'Worker') {
+if (contact.vars.employer == '0') {
     var service_vars = [
         'offer_service',
         'stop_service',
         'start_service',
         'review_service',
-        'random_service',
         'register_service',
     ];
     contact.addToGroup(worker_group);
 }
-else if (state.vars.type == 'Employer') {
+else if (contact.vars.employer == '1') {
     var service_vars = [
         'recruit_service',
         'close_service',
-        'feedback_service',
+        'view_service',
+        'survey_service',
         'stop_service',
         'start_service',
-        'random_service',
         'register_service',
     ];
     contact.vars.worker_group = worker_group.name;
