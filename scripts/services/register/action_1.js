@@ -41,7 +41,7 @@ else if (contact.vars.employer == '1') {
         'recruit_service',
         'close_service',
         'view_service',
-        'feedback_service',
+        'survey_service',
         'stop_service',
         'start_service',
         'register_service',
