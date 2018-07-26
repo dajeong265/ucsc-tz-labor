@@ -14,7 +14,7 @@ global.main = function() {
         ['stop_service', ['stop', 'sitisha']],
         ['random_service', ['survey', 'utafiti']],
         ['review_service', ['review', 'hakiki']],
-        ['register_service', ['register']],
+        ['register_service', ['register', 'sajili']],
     ];
 
     var msg_contains = function(word) {
