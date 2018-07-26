@@ -19,7 +19,7 @@ else {
 
 var worker_group = project.getOrCreateGroup(contact.vars.village);
 
-if (!worker_group.vars.old_group) {
+if (!worker_group.vars.old_group && worker_group.num_members == 0) {
     worker_group.name = contact.vars.village;
     worker_group.vars.old_group = true;
     worker_group.save();
