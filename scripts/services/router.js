@@ -15,7 +15,7 @@ global.main = function() {
             ['random_service', ['survey', 'utafiti']],
             ['review_service', ['review', 'hakiki']],
         ],
-        register_keywords = ['register'];
+        register_keywords = ['register', 'sajili'];
 
     var msg_contains = function(word) {
         // Test whether the message (global) contains the given word
