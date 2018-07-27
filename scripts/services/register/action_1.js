@@ -38,10 +38,10 @@ if (contact.vars.employer == '0') {
 }
 else if (contact.vars.employer == '1') {
     var service_vars = [
+        'feedback_service',
         'recruit_service',
         'close_service',
         'view_service',
-        'feedback_service',
         'stop_service',
         'start_service',
         'register_service',
