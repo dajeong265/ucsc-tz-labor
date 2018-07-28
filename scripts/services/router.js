@@ -8,7 +8,7 @@ global.main = function() {
             ['recruit_service', ['hire', 'recruit', 'employ','kibarua','vibarua','wafanyakazi', 'wafanya', 'wafanya kazi', 'wafanya kaz']],
             ['offer_service', ['job','kazi']],
             ['view_service', ['offer','huduma']],
-            ['close_service', ['close','funga']],
+            ['close_service', ['close','funga','Funga','FUNGA']],
             ['feedback_service', ['feedback','mrejesho']],
             ['start_service', ['start', 'anza']],
             ['stop_service', ['stop', 'sitisha']],
