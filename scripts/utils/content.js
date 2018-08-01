@@ -1,5 +1,5 @@
 function parse_code(content) {
-    matches = content.match(/(\d{6})$/);
+    matches = content.match(/(\d{3})$/);
 
     if (matches) {
         return matches[1];
