@@ -22,24 +22,31 @@ function get_row_with_code(table, code) {
 }
 
 
-function generate_code() {
-    return (Math.floor(Math.random() * 900000) + 100000).toString();
+function zero_pad_end(number, padding) {
+    return parseInt(number + Array(padding).join('0'));
 }
 
 
-function make_code(table) {
-    var t = _table(table),
+function generate_code(size) {
+    return (Math.floor(Math.random() * zero_pad_end('9', size)) + zero_pad_end(1, size)).toString();
+}
+
+
+function make_code(table, size) {
+    var t = table,
         collision,
-        code = generate_code(),
+        code = generate_code(size),
         cursor = t.queryRows({
             vars: {'code': code}
-        });
+        }),
+        max_size = 6,
+        next_size = (size < max_size) ? size + 1 : max_size;
 
     cursor.limit(1);
     collision = cursor.hasNext();
 
     if (collision) {
-        return make_code(t);
+        return make_code(t, next_size);
     }
     return code;
 }
@@ -56,7 +63,7 @@ function store(table, contact, vars) {
 
 function store_with_code(table, contact, vars) {
     var t = _table(table);
-    vars.code = make_code(t);
+    vars.code = make_code(t, 3);
     return t.createRow({
         contact_id: contact.id,
         vars: vars,
