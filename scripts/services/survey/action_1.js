@@ -57,21 +57,23 @@ if(global.$recruit_id) {
         request = _.find(requests.all(), function (request){
             return request.vars.finished !== true;
         });
-
-    
-    //----------------------------------------------------------------------------------------------------
-    // DJ Code insert to generate an indicator variable of 
-    // whether an employer hired any worker or not for a given recruit_id.
-    // this variable will be 0 if the employer didn't hire any and a positive number if he/she did.
-        current_ratings = _.map(requests.all(), function(row) {
+        
+        //----------------------------------------------------------------------------------------------------
+        // DJ Code insert to generate an indicator variable of 
+        // whether an employer hired any worker or not for a given recruit_id.
+        // this variable will be 0 if the employer didn't hire any and a positive number if he/she did.
+        applications = request_table.queryRows({
+            vars: {'recruit_id': global.$recruit_id},
+        }),
+        current_ratings = _.map(applications.all(), function(row) {
             return row.vars.rating;
         }),
         hired_any = _.reduce(current_ratings, function(memo, num) {
             return memo + parseInt(num);
         }, 0);
-        global.$hired_any = hired_any
-    //----------------------------------------------------------------------------------------------------
-    
+        global.$hired_any = hired_any;
+        //----------------------------------------------------------------------------------------------------
+
     
     if(request) {
         global.$name = request.vars.name;
