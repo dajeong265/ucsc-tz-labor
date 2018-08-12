@@ -75,4 +75,5 @@ if (offer) {
     global.$worker_phone = worker.phone_number;
     global.$worker_rating = worker.vars.rating;
     global.$worker_rating_count = worker.vars.rating_count;
+    global.$worker_village = worker.vars.village;
 }
