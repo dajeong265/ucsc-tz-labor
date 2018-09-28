@@ -17,6 +17,7 @@ var recruit = data.store_with_code(
         contact,
         {
             'recruit_id': recruit.id,
+            'employer_number': from_number,
             'posted': moment().unix(),
         }
     );
