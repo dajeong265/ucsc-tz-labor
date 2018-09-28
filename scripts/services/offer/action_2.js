@@ -88,7 +88,7 @@ if (!requested) {
 
     var prompt_msg = project.scheduleMessage({
             content: global.mrejesho_tpl(ctx),
-            to_number: from_number,
+            to_number: survey.vars.employer_number,
             start_time: parseInt(survey.vars.posted)+604800, // in seconds (unix timestamp)
             rrule: 'FREQ=DAILY;INTERVAL=2;COUNT=2;',
         });
