@@ -22,6 +22,7 @@ if(offer) {
     var employer = project.getContactById(recruit.contact_id);
 
     // save variable details that will be used in the message contents.
+    global.$offer_recruit_id = offer.vars.recruit_id;
     global.$employer_name = employer.name;    
     global.$payment = recruit.vars.payment;
     global.$posted = moment.unix(survey.vars.posted).format('MMM Do');
