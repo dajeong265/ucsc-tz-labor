@@ -49,7 +49,7 @@ global.main = function() {
         }
 
         if (djfuta_keywords.some(msg_contains)) {
-            Contact contact = project.initContactById(contact_id);
+            var contact = project.initContactById(contact_id);
             contact.delete();
         } 
     
