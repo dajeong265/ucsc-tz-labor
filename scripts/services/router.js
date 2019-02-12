@@ -15,7 +15,7 @@ global.main = function() {
             ['random_service', ['survey', 'utafiti']],
             ['review_service', ['review', 'hakiki']],
         ],
-        djtest_keywords = ['djwakulima'],
+        newregister_keywords = ['ORODHESHA', 'ORODESHA'],
         djfuta_keywords = ['djfuta'],
         register_keywords = ['register', 'sajili', 'saji', 'sajli'];
 
@@ -42,7 +42,7 @@ global.main = function() {
     }
 
     // DJ temporary test for registration and deleting a contact
-        if (djtest_keywords.some(msg_contains)) {
+        if (newregister_keywords.some(msg_contains)) {
             invoke_with_msg('SVd37e7a9a39084bfe'); // Register service id
             global.return_value = true;
             return;
