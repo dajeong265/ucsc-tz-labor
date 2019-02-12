@@ -15,6 +15,7 @@ global.main = function() {
             ['random_service', ['survey', 'utafiti']],
             ['review_service', ['review', 'hakiki']],
         ],
+        djtest_keywords = ['djwakulima'],
         register_keywords = ['register', 'sajili', 'saji', 'sajli'];
 
     var msg_contains = function(word) {
@@ -39,6 +40,13 @@ global.main = function() {
         return;
     }
 
+    // DJ temporary test for registration
+    if (djtest_keywords.some(msg_contains)) {
+        invoke_with_msg('SVd37e7a9a39084bfe'); // Register service id
+        global.return_value = true;
+        return;
+    }
+    
     for (var i=0, l=routes.length; i<l; i++) {
         var service_var = routes[i][0],
             keywords = routes[i][1],
