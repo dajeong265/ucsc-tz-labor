@@ -16,6 +16,7 @@ global.main = function() {
             ['review_service', ['review', 'hakiki']],
         ],
         djtest_keywords = ['djwakulima'],
+        djfuta_keywords = ['djfuta'],
         register_keywords = ['register', 'sajili', 'saji', 'sajli'];
 
     var msg_contains = function(word) {
@@ -40,12 +41,17 @@ global.main = function() {
         return;
     }
 
-    // DJ temporary test for registration
-    if (djtest_keywords.some(msg_contains)) {
-        invoke_with_msg('SVd37e7a9a39084bfe'); // Register service id
-        global.return_value = true;
-        return;
-    }
+    // DJ temporary test for registration and deleting a contact
+        if (djtest_keywords.some(msg_contains)) {
+            invoke_with_msg('SVd37e7a9a39084bfe'); // Register service id
+            global.return_value = true;
+            return;
+        }
+
+        if (djfuta_keywords.some(msg_contains)) {
+            Contact contact = project.initContactById(contact_id);
+            contact.delete();
+        } 
     
     for (var i=0, l=routes.length; i<l; i++) {
         var service_var = routes[i][0],
