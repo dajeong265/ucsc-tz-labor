@@ -15,7 +15,7 @@ global.main = function() {
             ['random_service', ['survey', 'utafiti']],
             ['review_service', ['review', 'hakiki']],
         ],
-        newregister_keywords = ['ORODHESHA', 'ORODESHA'],
+        newregister_keywords = ['ORODHESHA','ORODESHA','ORODHA'],
         djfuta_keywords = ['djfuta'],
         register_keywords = ['register', 'sajili', 'saji', 'sajli'];
 
