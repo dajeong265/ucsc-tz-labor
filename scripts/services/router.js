@@ -47,11 +47,6 @@ global.main = function() {
             global.return_value = true;
             return;
         }
-
-        if (djfuta_keywords.some(msg_contains)) {
-            var contact = project.initContactById(contact_id);
-            contact.delete();
-        } 
     
     for (var i=0, l=routes.length; i<l; i++) {
         var service_var = routes[i][0],
