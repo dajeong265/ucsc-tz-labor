@@ -39,6 +39,12 @@ if (contact.vars.employer == '0') {
 else if (contact.vars.employer == '1') {
     var service_vars = [
         'worker_group2',
+        'worker_group3',
+        'worker_group4',
+        'worker_group5',
+        'worker_group6',
+        'worker_group7',
+        'worker_group8',
         'feedback_service',
         'recruit_service',
         'close_service',
