@@ -38,6 +38,7 @@ if (contact.vars.employer == '0') {
 }
 else if (contact.vars.employer == '1') {
     var service_vars = [
+        'worker_group2',
         'feedback_service',
         'recruit_service',
         'close_service',
