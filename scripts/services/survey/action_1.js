@@ -40,7 +40,7 @@ else {
     // <--- DJedit on 2019.02.16
     if (!survey){
         var survey_table = project.getOrCreateDataTable('survey');
-        mrejesho_contact = offer_table.queryRows({
+        mrejesho_contact = survey_table.queryRows({
             'contact_id': contact.id,
             'vars[paid][exists]': 0,
         }),
