@@ -37,6 +37,18 @@ else {
     var code = utils.parse_code(content),
         survey = data.get_row_with_code('survey', code);
 
+    // <--- DJedit on 2019.02.16
+    if (!survey){
+        var survey_table = project.getOrCreateDataTable('survey');
+        mrejesho_contact = offer_table.queryRows({
+            'contact_id': contact.id,
+            'vars[paid][exists]': 0,
+        }),
+        mrejeshorow = mrejesho_contact.next();
+        global.$mrejeshocode = mrejeshorow.vars.code;
+    }
+    //--->
+    
     if (survey && survey.vars.finished !== true) {
         var recruit_table = project.getOrCreateDataTable('recruit'),
             recruit = recruit_table.getRowById(survey.vars.recruit_id);
