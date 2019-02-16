@@ -33,6 +33,7 @@ if (!offer) {
     var offer_table = project.getOrCreateDataTable('offer'),
         hakikicontact = offer_table.queryRows({
             'contact_id': contact.id
+            vars:{'hired':''}
         }),
         hakikirow = hakikicontact.next();
 
