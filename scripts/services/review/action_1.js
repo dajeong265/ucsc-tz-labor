@@ -27,3 +27,15 @@ if(offer) {
     global.$payment = recruit.vars.payment;
     global.$posted = moment.unix(survey.vars.posted).format('MMM Do');
 }
+
+
+if (!offer) {
+    var offer_table = project.getOrCreateDataTable('offer'),
+        hakikicontact = offer_table.queryRows({
+            'contact_id': contact.id
+        }),
+        hakikirow = hakikicontact.next();
+
+    global.$hakikicode = hakikirow.vars.code;
+    
+}
