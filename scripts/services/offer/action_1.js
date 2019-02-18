@@ -12,7 +12,7 @@ if (row) {
         global.$recruiter = recruiter.phone_number;
         global.$recruiter_name = recruiter.name;
         global.$payment = row.vars.payment;
-        global.$recruiter_village = row.vars.village;
+        global.$recruiter_village = recruiter.vars.village;
     }
     else {
         global.$closed = true;
