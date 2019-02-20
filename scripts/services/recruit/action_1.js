@@ -12,6 +12,7 @@ var recruit = data.store_with_code(
             'acres': state.vars.acres,
             'start': state.vars.startday,
             'employer_wtp': state.vars.recruiter_wtp,
+            'recruit_service':contact.vars.recruit_service,
             'employer_village': contact.vars.village,
             'worker_group2': contact.vars.worker_group2,
             'worker_group3': contact.vars.worker_group3,
