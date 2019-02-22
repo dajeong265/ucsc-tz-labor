@@ -11,6 +11,7 @@ if (row) {
         global.$recruit_id = row.id;
         global.$recruiter_wtp = row.vars.employer_wtp;
         global.$payment = row.vars.payment;
+        global.$recruit_code = row.vars.code;
         
         global.$recruit_service = recruiter.vars.recruit_service;
         global.$recruiter = recruiter.phone_number;
