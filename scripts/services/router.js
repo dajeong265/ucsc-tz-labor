@@ -9,7 +9,7 @@ global.main = function() {
             ['offer_service', ['job','kazi','kaz']],
             ['view_service', ['offer','huduma']],
             ['close_service', ['close','funga','Funga','FUNGA']],
-            ['feedback_service', ['feedback','mrejesho','mregesho','mrejesh']],
+            ['feedback_service', ['feedback','mrejesho','mregesho','mrejesh','mrejexho']],
             ['start_service', ['start', 'anza']],
             ['stop_service', ['stop', 'sitisha']],
             ['random_service', ['survey', 'utafiti']],
