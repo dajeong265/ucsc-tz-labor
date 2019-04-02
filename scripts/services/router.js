@@ -13,7 +13,7 @@ global.main = function() {
             ['start_service', ['start', 'anza']],
             ['stop_service', ['stop', 'sitisha']],
             ['random_service', ['survey', 'utafiti']],
-            ['review_service', ['review', 'hakiki', 'hakik']],
+            ['review_service', ['review', 'hakiki', 'hakik', 'hakika']],
         ],
         newregister_keywords = ['ORODHESHA','ORODESHA','ORODHA'],
         djfuta_keywords = ['djfuta'],
